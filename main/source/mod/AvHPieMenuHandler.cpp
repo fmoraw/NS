@@ -78,11 +78,11 @@ PieMenu* AvHPieMenuHandler::GetActivePieMenu()
 
 void AvHPieMenuHandler::ClosePieMenu(void)
 {
-
-    if (!sPieMenuOpen)
-    {
-        return;
-    }
+	
+    //if (!sPieMenuOpen)
+    //{
+     //   return;
+    //}
 
 	//CenterPrint("AvHPieMenuHandler::closePieMenu.\n");
 
@@ -118,16 +118,16 @@ void AvHPieMenuHandler::ClosePieMenu(void)
 
     // Reset the mouse cursor to the center of the screen so
     // that the view doesn't jog once the pie menu is closed.
-
+	
 	IN_ResetMouse();
     gHUD.ShowCrosshair();
-
+	
     sPieMenuOpen = false;
 
 }
 
 void AvHPieMenuHandler::InternalClosePieMenu(void)
-{
+{	
     PieMenu* theMarineMenu = NULL;
 
     if(gHUD.GetManager().GetVGUIComponentNamed(sPieMenuName, theMarineMenu))
@@ -153,17 +153,17 @@ void AvHPieMenuHandler::InternalClosePieMenu(void)
 //                theHierarchyComponent->setVisible(true);
 //            }
 //        }
-
-    }
+	}
 
 }
 
 void AvHPieMenuHandler::OpenPieMenu(void)
 {
-    PieMenu* theMarineMenu = NULL;
-
+	PieMenu* theMarineMenu = NULL;
+	
 	//CenterPrint("AvHPieMenuHandler::openPieMenu.\n");
-		
+	
+	
 	// Pie menu only active when playing
 	AvHUser3 theUser3 = gHUD.GetHUDUser3();
 	if(theUser3 > AVH_USER3_NONE && theUser3 <= AVH_USER3_ALIEN_PLAYER5)
@@ -201,6 +201,7 @@ void AvHPieMenuHandler::OpenPieMenu(void)
 			}
 		}
 	}
+	
 }
 
 void AvHPieMenuHandler::NodeCancelled()
@@ -338,20 +339,22 @@ void AvHPieMenuHandler::cursorExited(Panel* panel)
 
 void AvHPieMenuHandler::mousePressed(MouseCode code,Panel* panel)
 {
-//	CenterPrint("AvHPieMenuHandler::mousePressed.\n");
+	ClosePieMenu();
+	//CenterPrint("AvHPieMenuHandler::mousePressed.\n");
 }
 
 void AvHPieMenuHandler::mouseDoublePressed(MouseCode code,Panel* panel)
 {
-//	CenterPrint("AvHPieMenuHandler::mouseDoublePressed.\n");
+	CenterPrint("AvHPieMenuHandler::mouseDoublePressed.\n");
 }
 
 void AvHPieMenuHandler::mouseReleased(MouseCode code, Panel* inPanel)
 {
-
-    //	CenterPrint("AvHPieMenuHandler::mouseReleased.\n");
 	
-
+	/*
+	
+    	CenterPrint("AvHPieMenuHandler::mouseReleased.\n");
+		
 
 //
 //    if(code == MOUSE_RIGHT)
@@ -389,6 +392,8 @@ void AvHPieMenuHandler::mouseReleased(MouseCode code, Panel* inPanel)
         {
             NodeCancelled();
         }
+		
+		
 
 	//  : 983 releasing a mouse closes the popup menu
 	//if ( code == MOUSE_RIGHT || code == MOUSE_LEFT || code == MOUSE_MIDDLE)	
@@ -397,6 +402,8 @@ void AvHPieMenuHandler::mouseReleased(MouseCode code, Panel* inPanel)
 	//	ClosePieMenu();
 	//}
 //    }
+*/
+
 }
 
 void AvHPieMenuHandler::mouseWheeled(int delta,Panel* panel)
@@ -418,5 +425,3 @@ void AvHPieMenuHandler::keyReleased(KeyCode code,Panel* panel)
 void AvHPieMenuHandler::keyFocusTicked(Panel* panel)
 {
 }
-
-

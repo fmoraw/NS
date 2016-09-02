@@ -10,7 +10,7 @@
 AngleMatrix
 
 ====================
-
+*/ #ifdef WIN32
 
 void AngleMatrix (const float *angles, float (*matrix)[4] )
 {
@@ -41,13 +41,13 @@ void AngleMatrix (const float *angles, float (*matrix)[4] )
 	matrix[1][3] = 0.0;
 	matrix[2][3] = 0.0;
 }
-*/
+#endif
 /*
 ====================
 VectorCompare
 
 ====================
-
+*/ #ifdef WIN32
 int VectorCompare (const float *v1, const float *v2)
 {
 	int		i;
@@ -58,20 +58,20 @@ int VectorCompare (const float *v1, const float *v2)
 			
 	return 1;
 }
-*/
+#endif
 /*
 ====================
 CrossProduct
 
 ====================
-
+*/ #ifdef WIN32
 void CrossProduct (const float *v1, const float *v2, float *cross)
 {
 	cross[0] = v1[1]*v2[2] - v1[2]*v2[1];
 	cross[1] = v1[2]*v2[0] - v1[0]*v2[2];
 	cross[2] = v1[0]*v2[1] - v1[1]*v2[0];
 }
-*/
+#endif
 /*
 ====================
 VectorTransform
