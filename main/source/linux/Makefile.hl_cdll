@@ -27,7 +27,7 @@ HL1_SERVER_OBJ_DIR=$(HL1_OBJ_DIR)/server
 
 CFLAGS=$(BASE_CFLAGS) $(ARCH_CFLAGS) -DCLIENT_DLL -I/usr/include/malloc -D_snwprintf=swprintf -DAVH_CLIENT -DUSE_OLDAUTH -DAVH_NO_NEXUS -DNDEBUG -DASSERT=assert -Dsprintf_s=snprintf -DDISABLE_VEC_FUNCS -DDISABLE_VEC_ORIGIN
 		 
-INCLUDEDIRS= -I$(HL_SRC_DIR) -I$(NS_MOD_SRC_DIR) -I$(COMMON_SRC_DIR) -I$(PUBLIC_SRC_DIR) -I$(PM_SHARED_SRC_DIR) -I../engine -I$(GAME_SHARED_SRC_DIR) -I../external/ -I../particles -I../includes/fmodapi375linux/api/inc -I$(HL_SERVER_SRC_DIR) -I$(HL_SRC_DIR)/cl_dll -I$(VGUI_INCLUDE_DIR) -I$(UI_INCLUDE_DIR) -I$(UTIL_SRC_DIR) -I../ -I../includes/fmodapi375linux/api
+INCLUDEDIRS= -I$(HL_SRC_DIR) -I$(NS_MOD_SRC_DIR) -I$(COMMON_SRC_DIR) -I$(PUBLIC_SRC_DIR) -I$(PM_SHARED_SRC_DIR) -I../engine -I$(GAME_SHARED_SRC_DIR) -I../external/ -I../particles -I../includes/fmodapi375linux/api/inc -I$(HL_SERVER_SRC_DIR) -I$(HL_SRC_DIR)/cl_dll -I$(VGUI_INCLUDE_DIR) -I$(UI_INCLUDE_DIR) -I$(UTIL_SRC_DIR) -I../ -I../includes/fmodapi375linux/api -I../includes/lpng1251
 
 ifeq ($(OS),Darwin)
 LDFLAGS=$(SHLIBLDFLAGS) $(CPP_LIB) -framework Carbon $(CFG)/vgui.dylib -L. -lSDL2-2.0.0
